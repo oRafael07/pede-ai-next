@@ -1,6 +1,7 @@
 import './globals.css'
 import { Roboto } from 'next/font/google'
 import React from 'react'
+import { ThemeContextProvider } from '@/context/ThemeContext'
 
 const roboto = Roboto({
   subsets: ['latin'],
@@ -18,8 +19,10 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
-      <body className={roboto.className}>{children}</body>
-    </html>
+    <ThemeContextProvider>
+      <html lang="en">
+        <body className={roboto.className}>{children}</body>
+      </html>
+    </ThemeContextProvider>
   )
 }
