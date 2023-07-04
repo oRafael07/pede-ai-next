@@ -23,10 +23,10 @@ interface ThemeContextProviderProps {
   children: ReactNode
 }
 
+const initialTheme = window.localStorage.getItem('theme') as 'dark' | 'light'
+
 export function ThemeContextProvider({ children }: ThemeContextProviderProps) {
-  const [theme, setTheme] = useState(
-    (localStorage.theme as 'dark' | 'light') ?? 'light',
-  )
+  const [theme, setTheme] = useState(initialTheme ?? 'light')
   const colorTheme = theme === 'dark' ? 'light' : 'dark'
   const [isDark, setIsDark] = useState(colorTheme === 'light')
 
@@ -34,7 +34,7 @@ export function ThemeContextProvider({ children }: ThemeContextProviderProps) {
     const root = window.document.documentElement
     root.classList.remove(colorTheme)
     root.classList.add(theme)
-    localStorage.setItem('theme', theme)
+    window.localStorage.setItem('theme', theme)
   }, [theme, colorTheme])
 
   return (
