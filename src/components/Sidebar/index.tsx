@@ -13,7 +13,7 @@ export default function Sidebar() {
         navbarOpened ? 'is-opened' : ''
       } `}
     >
-      <div className="w-24 group-[.is-opened]:w-72 h-screen border-r-[1px] bg-white dark:bg-zinc-900 dark:border-zinc-900">
+      <div className="w-24 group-[.is-opened]:w-72 group-[.is-opened]:max-sm:absolute group-[.is-opened]:max-sm:w-screen h-screen border-r-[1px] bg-white dark:bg-zinc-900 dark:border-zinc-900">
         <header className="p-6 border-b-[1px] shadow-lg dark:border-zinc-900 hidden group-[.is-opened]:block">
           <h1 className="font-extrabold text-2xl text-center text-slate-800 dark:text-slate-50">
             PEDE.AI
@@ -22,7 +22,7 @@ export default function Sidebar() {
         <main>
           <header className="p-8 hidden group-[.is-opened]:block">
             <h4 className="font-bold text-lg text-zinc-700 dark:text-slate-50">
-              DOCERIA - LOJA 1
+              TECH DOCERIA - LOJA 1
             </h4>
             <p className="font-normal text-gray-400 text-sm">
               Segunda-feira, 03 de Julho

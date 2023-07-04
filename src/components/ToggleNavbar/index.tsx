@@ -8,7 +8,7 @@ export default function ToogleNavbarButton() {
 
   return (
     <button
-      className="p-2 rounded hover:bg-zinc-100 dark:hover:bg-zinc-800"
+      className="p-2 rounded hover:bg-zinc-100 dark:hover:bg-zinc-800 z-10"
       onClick={() => handleNavbarOpened()}
     >
       {navbarOpened ? (
